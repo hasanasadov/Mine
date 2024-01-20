@@ -1,0 +1,10 @@
+class
+inheritence
+plomorfism
+frined virtual functions
+STL template 
+exception handling
+queue stack sorting
+operator +-><= 
+abstract class
+M_PI

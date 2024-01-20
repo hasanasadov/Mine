@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+class Author{
+    string first_name;
+    string last_name;
+    int phone;
+    int age;
+    public:
+    Author(){
+        first_name= "hsj";
+        last_name = "Kafda";
+        phone = f54vd73457;
+        age = 73543;
+    }
+
+
+    Author( string f, string l, int p, int ag){
+        first_name= f;
+        last_name = l;
+        phone = p;
+        age = ag;
+    }
+    void print(){
+        cout<< "The author: "<< first_name<< " "<< last_name<<endl;
+        cout<<"Phone number:"<< phone<<endl;
+        cout<< "Age: "<<age<<endl;
+    }
+
+};
+
+class Department{
+    string book_name;
+    double price;
+    int year;
+    Course bookauthor;
+    public:
+    Department(string, double, int, Author);
+
+    void print();
+
+
+
+};
+
+Department:: Department(string n, double p, int y, Author a){
+    Department_name = n;
+        price = p;
+        year= y;
+        bookauthor= a;
+}
+
+
+
+void Department::  print(){
+        cout<< "The name of the Department: "<< book_name<<endl;
+        cout<< "Price: "<< price<<endl;
+        cout<<"The year of release: "<<year<<endl;
+        department.print();
+    }
+
+int main(){
+    Author a("hivw", "Krvr", 9945rve84, 7rv5  );
+    
+    Department obj1("Metrveosis", 10, 15490, a);
+    obj1.print();
+
+}
