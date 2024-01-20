@@ -1,0 +1,5 @@
+	Student ID	     Student Name
+	       125		    Hasan
+	       126		      Ali
+	       127    		     Asad
+Name	CS20A	CS21A	CS29A	CS30A	CS35A	CS36A
