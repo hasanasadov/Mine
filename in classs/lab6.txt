@@ -1,0 +1,256 @@
+#include <stdio.h>
+#include <stdlib.h>
+//task 1
+/*int main(){
+    int n,i;
+    printf("enter the size: ");
+    scanf("%d",&n);
+    int *a=(int *)malloc(n*sizeof(int));
+    printf("enter numbers\n");
+    for (int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    printf("the values of the array: ");
+    for (int i=0;i<n;i++){
+        printf("%d ",a[i]);
+    }
+    int n2;
+    n2=n/2;
+    a=realloc(a, n2);
+    printf("\n");
+    for(i=0;i<n2;i++){
+        printf("%d ",a[i]);
+    }
+    free(a);
+}*/
+//Task2
+
+//2
+/*
+int main(){
+    int i;
+    char *str1;
+    char *str2;
+    char *ptr;
+    str1=malloc(12*sizeof(char));
+    strcpy(str1,"Hello World");
+
+    str2=malloc(12*sizeof(char));
+    strcpy(str2,"Salam Dunya");
+    printf("\nfirst String addres: %u\n",str1);
+    printf("\nSecond String address: %u\n",str2);
+
+    printf("\nFIRST sTRING:\n");
+    for(i=0;i<stlen(str1);i++){
+        printf("%c---%u\n",*(str1+i),str+1);
+    }    
+    printf("\nSecond String:\n");
+    for (i=0;i<strlen(str2);i++){
+        printf("%c---%u\n",*(str2+i),str2+i);
+    }
+    printf("\nFirst String(length*3):\n");
+    for (size_t i=0;i<strlen(str1);i++){
+        printf("%c---%p\n",*(str1+i),str1+i);
+    }
+    printf("\n\nadress of the first string(before reallocation");
+
+    ptr=str1;
+    str1=realloc(str1,20*sizeof(char));
+    printf("\n adress of the first string(after reallocation");
+    printf("str1=%s\n",str1);
+
+    printf("\nThe saved adress str1 : %u\n\n",ptr);
+    printf("ptr=%s\n",ptr);
+    for (i=0;i<12;i++){
+        printf("%c---%u\n",*(ptr+i),ptr+i);
+    }
+    free(str1);
+    free(str2);
+    free(ptr);
+} 
+*/
+
+//task 3,4
+/*
+#include <stdio.h>
+
+#define ROWS 3
+#define COLS 3
+void matrixInput(int mat[][COLS]);
+void matrixPrint(int mat[][COLS]);
+void matrixAdd(int mat1[][COLS], int mat2[][COLS], int res[][COLS]);
+
+int main()
+{
+    int mat1[ROWS][COLS], mat2[ROWS][COLS], res[ROWS][COLS];
+    printf("Enter elements in first matrix of size %dx%d: \n", ROWS, COLS);
+    matrixInput(mat1);
+    printf("the 1st matrix:\n");
+    matrixPrint(mat1);
+    printf("\nEnter elemetns in second matrix of size %dx%d: \n", ROWS, COLS);
+    matrixInput(mat2);
+    printf("\n");
+    printf("the 2nd matrix:\n");
+    matrixPrint(mat2);
+    matrixAdd(mat1, mat2, res);
+
+    printf("\nSum of 1st and 2nd matrix: \n");
+    matrixPrint(res);
+    return 0;
+}
+
+void matrixInput(int mat[][COLS])
+{
+    int i, j;
+    for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLS; j++)
+        {
+            // (*(mat + i) + j) is equal to &mat[i][j]
+            scanf("%d", (*(mat + i) + j));
+        }
+    }
+}
+
+void matrixPrint(int mat[][COLS])
+{
+    int i, j;
+    for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLS; j++)
+        {
+            // *(*(mat + i) + j) is equal to mat[i][j]
+            printf("%d ", *(*(mat + i) + j));
+        }
+        printf("\n");
+    }
+}
+
+
+void matrixAdd(int mat1[][COLS], int mat2[][COLS], int res[][COLS])
+{
+    int i, j;
+    for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLS; j++)
+        {
+            // res[i][j] = mat1[i][j] + mat2[i][j]
+            *(*(res + i) + j) = *(*(mat1 + i) + j) + *(*(mat2 + i) + j);
+        }
+    }
+}*/
+//task 5
+/*int main(){
+    int s;
+    printf("enter the size of array: ");
+    scanf("%d",&s);
+    int a[s];
+    int *b[100];
+    for (int i=0;i<s;i++){
+        scanf("%d",&a[i]);
+
+    }
+    printf("array 1\n");
+    for (int i=0;i<s;i++){
+        printf("%d ",a[i]);
+
+    }
+
+    printf("\n");
+    printf("the copy of array 1\n");
+    for (int i=0;i<s;i++){
+        *(b+i)=*(a+i);
+        printf("%d ",*(b+i));
+
+    }
+}*/
+//task 6
+/*void fun(int *p){
+    int q=10;
+    p=&q;
+}
+int main(){
+    int r=20;
+    int *p=&r;
+    fun(p);
+    printf("%d",*p);
+    return 0;
+}*/
+/*
+int main(){
+    int a[5]={1,2,3,4,5};
+    int *ptr=(int*)(&a+1);
+    printf("%d %d", *(a+1),*(ptr-1));
+}*/
+/*void fun(char** str_ref){
+    str_ref++;
+}
+int main(){
+    char *str=(void*)malloc(100*sizeof(char));
+    strcpy(str,"geeksquiz");
+    fun(&str);
+    puts(str);
+    free(str);
+    return 0;
+}*/
+/*int main(){
+    int a[][3]={1,2,3,4,5,6};
+    int (*ptr)[3]=a;
+    printf("%d %d\n",(*ptr)[1],(*ptr)[2]);
+    ++ptr;
+    printf("%d %d\n",(*ptr)[1],(*ptr)[2]);
+    return 0;
+}*/
+/*int main(void){
+    int i;
+    int *ptr=(int *)malloc(5*sizeof(int));
+    for(i=0;i<5;i++){
+        *(ptr+i)=i;
+        printf("%d ",*(ptr+i));
+    }
+    printf("\n%d ",*ptr++);
+    printf("%d ",(*ptr)++);
+    printf("%d ",*ptr);
+    printf("%d ",*++ptr);
+    printf("%d ",++*ptr);
+    
+}*/
+/*int fun(int arr[]){
+    arr=arr+1;
+    printf("%d ",arr[0]);
+
+}
+int main(void){
+    int arr[2]={10,20};
+    fun(arr);
+    printf("%d",arr[0]);
+    return 0;
+}*/
+/*int f(int x,int *py,int **ppz){
+    int y,z;
+    **ppz==1;
+    z=**ppz;
+    *py+=2;
+    y=*py;
+    x+=3;
+    return x+y+z;
+ }
+void main(){
+    int c,*b,**a;
+    c=4;
+    b=&c;
+    a=&b;
+    printf("%d",f(c,b,a));
+}*///??
+/*int main(){
+    static int a[]={10,20,30,40,50};
+    static int *p[]={a,a+3,a+4,a+1,a+2};
+    int **ptr=p;
+    ptr++;
+    printf("%d %d",ptr-p,**ptr);
+}*/ //??
+/*
+int main(){
+    unsigned int x[4][3]={{1,2,3},{4,5,6},{7,8,9,},{10,11,12}};
+    printf("%u %u %u",x+3,*(x+3),*(x+2)+3);
+}*/
