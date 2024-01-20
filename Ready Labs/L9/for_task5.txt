@@ -1,0 +1,4 @@
+hasan	1	0	0	0	0
+fd	0	1	0	1	0
+fidan	1	0	0	1	1
+murad	0	1	1	0	0

@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <math.h>
+/*
+int main(){
+    
+    int a,c=0,temp1,temp2,summ=0;
+    scanf("%d",&a);
+    temp1=a;
+    temp2=a;
+    while(temp1>0){
+        temp1/=10;
+        c++;
+    }
+    printf("count=%d\n",c);
+    while(temp2>0){
+        summ+=pow(temp2%10,c);
+        temp2/=10;
+    }
+    printf("summ=%d\n",summ);
+    if (a==summ){
+        printf("%d is Armstr\n",a);
+    }
+    else{
+        printf("%d is not Armstr\n",a);
+    }
+}
+*/
+//16 exrcise b
+/*
+int main(){
+    int N;
+    printf("Enter limit: ");
+    scanf("%d",&N);
+    double e=1,temp,fact=1;
+    for (int x=1;x<=N;x++){
+        fact*=x;
+        e+=1/fact;
+    }
+    printf("%f",e);
+
+    return 0;
+}
+*/
+//Task 18 -- not checked
+/*
+int main(){
+    int first,second,third,fourth;
+    int a,b;
+    printf("Enter four-digit integer:");
+    scanf("%d %d %d %d",&first,&second,&third,&fourth);
+    
+    first=(first+7)%10;
+    second=(second+7)%10;
+    third=(third+7)%10;
+    fourth=(fourth+7)%10;
+
+
+    a=first;
+    first=third;
+    third=a;
+
+    b=second;
+    second=fourth;
+    fourth=b;
+
+    printf("%d%d%d%d",first,second,third,fourth);
+}
+*/

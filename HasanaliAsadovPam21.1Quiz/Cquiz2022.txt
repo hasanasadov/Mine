@@ -1,0 +1,4 @@
+Articles: the a one some any
+Nouns: boy girl dog town car
+Verbs: drove jumped ran walked skipped
+Prepositions: to from over under on
