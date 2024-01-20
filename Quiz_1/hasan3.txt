@@ -1,0 +1,65 @@
+#include <iostream>
+#include <cmath>
+#define USING_MATH_DEFINES
+using namespace std;
+
+class EquilateralTriangle;
+class Circle{
+
+    int radius;
+    public:
+    Circle(int = 5);
+    float Circumference(){
+        return 2*M_PI*radius;
+    }
+    
+    friend void Mult(Circle,EquilateralTriangle  );
+};
+
+Circle:: Circle(int r){
+    radius = r;
+}
+
+class EquilateralTriangle{
+    int side;
+    public:
+    EquilateralTriangle(int = 4);
+    float Area(){
+        return (sqrt(3)/4)*side*side;
+    }
+
+    friend void Mult(Circle,EquilateralTriangle  );
+
+
+};
+
+void Mult(Circle objx,EquilateralTriangle objy ){
+    cout<<"Radius*side: "<<objx.radius*objy.side<<endl;
+    
+
+
+}
+
+
+EquilateralTriangle:: EquilateralTriangle(int s){
+    side = s;
+
+}
+
+
+
+
+
+int main(){
+    Circle obj1(6);
+    EquilateralTriangle obj2(5);
+    cout<<"The Circumference of the circle: "<<obj1.Circumference()<<endl;
+    cout<<"The Area of the triangle: "<<obj2.Area()<<endl;
+    Mult(obj1, obj2);
+
+
+}
+
+
+
+
