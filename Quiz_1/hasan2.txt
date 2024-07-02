@@ -1,0 +1,65 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+class Distance{
+    int km;
+    int m;
+    public:
+    Distance(){
+        km = 4;
+        m = 700;
+    }
+    Distance(int km_x, int m_x){
+        km = km_x;
+        m = m_x;
+    }
+    Distance operator+(Distance &A){
+        Distance X;
+        X.km = km+A.km;
+
+        X.m = m+ A.m;
+        if (X.m > 1000){
+            X.km+=1;
+            X.m = X.m-1000;
+        }
+        return X;
+
+    }
+    void print(){
+        cout<<"The distance is: " << km<< " km, "<<m<< " m"<<endl;
+
+    }
+
+    bool operator>( Distance &A){
+        if (km>A.km){
+            return true;
+        }
+        else if(km == A.km && m>A.m){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+
+};
+
+int main(){
+    Distance obj1, obj2(8,150), obj3;
+    obj3 = obj1+obj2;
+    obj3.print();
+    if (obj1>obj2){
+        cout<<"The first object is BIGGER";
+
+    }
+    else{
+        cout<<"the first object is NOTbigger";
+
+    }
+
+}
